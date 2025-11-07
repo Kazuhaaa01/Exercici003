@@ -1,27 +1,37 @@
-/* --- ESTILS GLOBALS I RESET --- */
+/* --- ESTILOS GLOBALES Y RESET --- */
+
+/* Selector universal: se aplica a TODO */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    /* El "box-model" moderno. 
+       El padding y el borde se incluyen DENTRO del 'width' y 'height'.
+       Esto hace que los cálculos de tamaño sean mucho más fáciles. 
+    */
+    box-sizing: border-box; 
+    /* Quitamos todos los márgenes y rellenos que ponen los navegadores por defecto. */
     margin: 0;
     padding: 0;
 }
 
+/* Estilos base para toda la página */
 body {
+    /* Fuentes de sistema (tipo de letra) */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    line-height: 1.5;
-    color: #333;
-    background-color: #fff;
+    line-height: 1.5; /* Interlineado (más legible) */
+    color: #333; /* Color de texto principal */
+    background-color: #fff; /* Color de fondo */
 }
 
+/* Estilos comunes para encabezados */
 h1, h2, h3 {
-    font-weight: 600;
+    font-weight: 600; /* Grosor de la fuente (semi-negrita) */
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3.5rem; /* Tamaño de fuente (relativo al 'root') */
     color: #000;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Margen inferior */
 }
 
 h2 {
@@ -35,61 +45,71 @@ h3 {
     margin-bottom: 0.5rem;
 }
 
+/* Estilos para párrafos */
 p {
     font-size: 1.15rem;
     color: #555;
-    max-width: 750px; /* Limita l'ample dels paràgrafs per llegibilitat */
+    max-width: 750px; /* Ancho máximo para que las líneas no sean muy largas */
+    /* Este es el truco para centrar un bloque con 'max-width' */
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1.5rem;
 }
 
+/* Estilos para enlaces (<a>) */
 a {
-    color: #007aff; /* Blau típic d'Apple */
-    text-decoration: none;
-    cursor: pointer; /* Requeriment MD */
+    color: #007aff; /* Color azul Apple */
+    text-decoration: none; /* Quita el subrayado por defecto */
+    cursor: pointer; /* Muestra la "manita" */
 }
 
+/* :hover se activa al pasar el ratón por encima */
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Muestra subrayado en el hover */
 }
 
+/* Estilos para imágenes */
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    max-width: 100%; /* Asegura que la imagen nunca sea más ancha que su contenedor */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Evita espacios extra debajo de la imagen */
 }
 
-/* --- CLASSE D'AUTOCENTRAT --- */
-/* Requeriment MD: autocenter global amb màxim de 1264px */
+/* --- CLASE DE AUTOCENTRADO --- */
+/*
+  Una clase "helper" (de ayuda) que usaremos mucho.
+  Sirve para centrar el contenido y ponerle un tope de ancho.
+*/
 .autocenter {
-    max-width: 1264px;
-    margin-left: auto;
+    max-width: 1264px; /* Ancho máximo del contenido */
+    margin-left: auto; /* Centrado horizontal automático */
     margin-right: auto;
+    /* Padding lateral para que en móviles el contenido no se pegue a los bordes */
     padding-left: 20px;
     padding-right: 20px;
 }
 
-/* --- HEADER I MENÚ STICKY --- */
-/* Requeriment MD: Menú de dues parts */
+/* --- HEADER Y MENÚ STICKY --- */
 
-/* Part superior (marxa amb scroll) */
+/* Parte superior (barra negra) */
 .menu-top {
-    background-color: #1d1d1f; /* Fons fosc */
+    background-color: #1d1d1f; /* Fondo oscuro */
     color: #f5f5f7;
     padding: 8px 0;
 }
 
+/* Usamos Flexbox para centrar el contenido de la barra superior */
 .menu-top .autocenter {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra horizontalmente (eje principal) */
+    align-items: center; /* Centra verticalmente (eje secundario) */
 }
 
+/* Contenedor del logo y el anuncio */
 .menu-top-content {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    align-items: center; /* Alinea verticalmente los items */
+    gap: 15px; /* Espacio entre el logo y el anuncio */
 }
 
 .menu-top .logo img {
@@ -105,33 +125,35 @@ img {
     color: #007aff;
 }
 
-/* Part inferior (sticky) */
-/* Requeriment MD: sticky, efecte "Frozen glass" */
+/* Parte inferior (menú principal que se pega) */
 .menu-sticky {
+    /* ¡Magia! El menú se queda fijo arriba al hacer scroll */
     position: sticky;
-    top: 0;
-    z-index: 100;
+    top: 0; /* Se pega al borde superior (top 0) */
+    z-index: 100; /* Se asegura de que esté por encima de otros elementos */
     
-    /* Efecte "Frozen glass" */
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Suport per Safari */
+    /* Efecto "cristal esmerilado" */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(10px); /* Difumina lo que hay detrás */
+    -webkit-backdrop-filter: blur(10px); /* Para que funcione en Safari */
     
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea inferior sutil */
 }
 
+/* Alineamos los enlaces del menú a la derecha */
 .menu-sticky .autocenter {
     display: flex;
-    justify-content: flex-end; /* Alinea els links a la dreta */
+    justify-content: flex-end; /* Alinea los items al final (derecha) */
     align-items: center;
     height: 52px;
 }
 
+/* La lista <ul> de enlaces del menú */
 ul.menu-links {
-    list-style: none;
-    display: flex; /* Requeriment MD: Flexbox */
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex; /* ¡Flexbox! Pone los <li> en fila */
     align-items: center;
-    gap: 30px;
+    gap: 30px; /* Espacio entre cada <li> */
 }
 
 ul.menu-links li a {
@@ -145,24 +167,24 @@ ul.menu-links li a:hover {
     text-decoration: none;
 }
 
-/* Botó "Buy" al menú */
+/* Estilo del botón "Buy" en el menú */
 .buy-button a {
     background-color: #007aff;
     color: #fff;
     padding: 8px 16px;
-    border-radius: 20px;
+    border-radius: 20px; /* Bordes redondeados */
     font-weight: 600;
 }
 .buy-button a:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
     color: #fff;
     text-decoration: none;
 }
 
-/* --- SECCIÓ HERO --- */
+/* --- SECCIÓN HERO (Principal) --- */
 .hero {
     padding: 60px 0;
-    text-align: center;
+    text-align: center; /* Centra todo el contenido de texto e imágenes */
 }
 
 .hero-subtitle {
@@ -174,30 +196,33 @@ ul.menu-links li a:hover {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
-    /* Requeriment MD: Sombra i cantonades amb CSS */
+    /* Damos estilo a la imagen (esquinas y sombra) */
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-/* Botons CTA (Call to Action) */
+/* Contenedor de los botones "Buy" y "Tech Specs" */
 .cta-buttons {
-    display: flex; /* Requeriment MD: Flexbox */
-    justify-content: center;
+    display: flex; /* Flexbox para ponerlos en fila */
+    justify-content: center; /* Centra los botones */
     align-items: center;
-    gap: 20px;
+    gap: 20px; /* Espacio entre botones */
     margin-top: 30px;
 }
 
+/* Estilo común para los dos botones */
 .btn-primary, .btn-secondary {
     display: inline-block;
     padding: 12px 24px;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 25px;
-    cursor: pointer; /* Requeriment MD */
+    cursor: pointer;
+    /* Transición suave para los cambios de color y sombra */
     transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Botón principal (azul) */
 .btn-primary {
     background-color: #007aff;
     color: #fff;
@@ -205,9 +230,10 @@ ul.menu-links li a:hover {
 .btn-primary:hover {
     background-color: #0056b3;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3); /* Sombra azul */
 }
 
+/* Botón secundario (gris) */
 .btn-secondary {
     background-color: #e5e5ea;
     color: #000;
@@ -217,16 +243,16 @@ ul.menu-links li a:hover {
     text-decoration: none;
 }
 
-/* --- SECCIONS DE CONTINGUT GENERAL --- */
+/* --- SECCIONES DE CONTENIDO GENERAL --- */
 .content-section {
-    padding: 80px 0;
+    padding: 80px 0; /* Espacio vertical para "aire" */
     text-align: center;
-    overflow: hidden; /* Evita desbordaments horitzontals */
+    overflow: hidden; /* Evita scroll horizontal si algo se sale */
 }
 
-/* Requeriment MD: Fons de diferents colors */
+/* Clase modificadora: si una sección tiene también ".gray-bg"... */
 .content-section.gray-bg {
-    background-color: #f5f5f7;
+    background-color: #f5f5f7; /* ...tendrá fondo gris. */
 }
 
 .content-section .link {
@@ -239,88 +265,91 @@ ul.menu-links li a:hover {
     text-decoration: none;
 }
 
-/* Imatge de contingut amb ombra i cantonades */
+/* Estilo para imágenes dentro de las secciones */
 .content-image {
-    margin: 40px auto 0 auto;
-    /* Requeriment MD: Sombra i cantonades amb CSS */
+    margin: 40px auto 0 auto; /* Centrada y con margen superior */
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* --- LAYOUTS ESPECÍFICS (FLEXBOX) --- */
+/* --- LAYOUTS ESPECÍFICOS (FLEXBOX) --- */
 
-/* Maquetació de 2 Columnes */
+/* Layout de 2 Columnas (ej: texto + imagen) */
 .two-column-layout {
-    display: flex; /* Requeriment MD: Flexbox */
-    align-items: center;
+    display: flex; /* Los hijos (.column) se ponen en fila */
+    align-items: center; /* Alinea verticalmente el texto y la imagen */
     gap: 50px;
-    text-align: left;
+    text-align: left; /* Anula el 'text-align: center' de la sección */
 }
 
 .two-column-layout .column {
-    flex: 1; /* Cada columna ocupa el 50% */
+    /* 'flex: 1' hace que cada columna ocupe el mismo espacio (50% y 50%) */
+    flex: 1; 
 }
 
-/* Classe per invertir l'ordre de les columnes */
+/* Clase modificadora para invertir el orden (imagen + texto) */
 .two-column-layout.reverse {
-    flex-direction: row-reverse;
+    /* Invierte el orden de los elementos hijos */
+    flex-direction: row-reverse; 
 }
 
-/* Grid de 3 característiques */
+/* Grid de 3 características (para las herramientas de selección) */
 .features-grid {
-    display: flex; /* Requeriment MD: Flexbox */
-    justify-content: space-between;
+    display: flex;
+    /* Reparte el espacio sobrante ENTRE los elementos */
+    justify-content: space-between; 
     gap: 40px;
     text-align: left;
     margin-top: 50px;
 }
 
 .feature-item {
-    flex: 1; /* Cada item ocupa 1/3 */
-    flex-basis: 300px; /* Ample base mínim abans d'embolicar */
+    flex: 1; /* Cada item ocupa 1/3 del espacio */
+    flex-basis: 300px; /* Ancho base (ayuda a Flexbox a calcular) */
 }
 
 .feature-image {
     margin-bottom: 20px;
-    /* Requeriment MD: Sombra i cantonades amb CSS */
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* Vídeo */
+/* Vídeo demo */
 .demo-video {
     width: 100%;
-    max-width: 1000px; /* Limita l'ample del vídeo */
+    max-width: 1000px; /* Tope de ancho para el vídeo */
     margin: 40px auto 0 auto;
-    /* Requeriment MD: Sombra i cantonades amb CSS */
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Grid de Tecnologies Apple */
+/* Grid de Tecnologías Apple (fondo negro) */
 .apple-tech {
     background-color: #000;
-    color: #fff;
+    color: #fff; /* Texto blanco por defecto */
 }
 
 .apple-tech h2 {
     color: #fff;
 }
 .apple-tech p {
-    color: #a1a1a6;
+    color: #a1a1a6; /* Texto gris claro */
 }
 
 .tech-grid {
-    display: flex; /* Requeriment MD: Flexbox */
-    flex-wrap: wrap; /* Permet que els items passin a la següent línia */
+    display: flex;
+    /* ¡CLAVE! Permite que los items pasen a la línea de abajo si no caben.
+       Así se crea un grid que se ajusta solo.
+    */
+    flex-wrap: wrap; 
     justify-content: center;
     gap: 30px;
     margin-top: 50px;
 }
 
 .tech-item {
-    flex-basis: 350px; /* Ample base per cada item */
-    flex-grow: 1;
+    flex-basis: 350px; /* Ancho base: cada item "pide" 350px */
+    flex-grow: 1; /* Permite que crezca si sobra espacio en la fila */
     background-color: #1d1d1f;
     padding: 30px;
     border-radius: 15px;
@@ -337,7 +366,7 @@ ul.menu-links li a:hover {
     margin-bottom: 0;
 }
 
-/* --- FOOTER --- */
+/* --- FOOTER (Pie de página) --- */
 footer {
     background-color: #f5f5f7;
     color: #777;
@@ -346,8 +375,8 @@ footer {
 }
 
 .footer-links {
-    display: flex; /* Requeriment MD: Flexbox */
-    justify-content: center;
+    display: flex; /* Enlaces en fila */
+    justify-content: center; /* Centrados */
     align-items: center;
     gap: 30px;
     margin-bottom: 20px;
@@ -368,57 +397,65 @@ footer {
     margin-bottom: 0;
 }
 
-/* --- DISSENY RESPONSIVE --- */
+/* --- DISSENY RESPONSIVE (Media Queries) --- */
+
+/* Estilos para pantallas de 900px o menos (Tablets) */
 @media (max-width: 900px) {
-    /* Apila les columnes en pantalles més petites */
+    
+    /* Apila las columnas (texto e imagen) una encima de otra */
     .two-column-layout,
     .two-column-layout.reverse {
-        flex-direction: column;
+        /* Cambia el eje de Flexbox de horizontal (row) a vertical (column) */
+        flex-direction: column; 
         text-align: center;
     }
     
-    /* Centra els paràgrafs que estaven a l'esquerra */
+    /* Centra los párrafos que antes estaban a la izquierda */
     .two-column-layout .column p {
         margin-left: auto;
         margin-right: auto;
     }
 
-    /* Apila el grid de característiques */
+    /* Apila el grid de 3 características (también en vertical) */
     .features-grid {
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Centra los items verticalmente apilados */
         text-align: center;
     }
 
     .feature-item {
-        max-width: 400px; /* Evita que s'estirin massa */
+        max-width: 400px; /* Evita que se estiren al 100% */
     }
 
+    /* Reduce un poco las fuentes */
     h1 { font-size: 2.8rem; }
     h2 { font-size: 2rem; }
     .hero-subtitle { font-size: 1.4rem; }
 }
 
+/* Estilos para pantallas de 768px o menos (Móviles) */
 @media (max-width: 768px) {
-    /* Ajusta el menú sticky per pantalles petites */
+    
+    /* Ajusta el menú para móviles */
     ul.menu-links {
         gap: 15px;
-        justify-content: center; /* Centra els links */
-        flex-wrap: wrap; /* Permet que caiguin a sota si no hi caben */
+        justify-content: center; /* Centra los enlaces */
+        flex-wrap: wrap; /* Si no caben, bajan a la siguiente línea */
     }
     
     .menu-sticky .autocenter {
-        height: auto; /* Alçada automàtica per si fa 'wrap' */
+        height: auto; /* Altura automática por si los enlaces hacen 'wrap' */
         padding-top: 10px;
         padding-bottom: 10px;
         justify-content: center;
     }
 
-    /* Oculta l'anunci superior en pantalles petites */
+    /* Oculta la barra negra superior en móviles para ahorrar espacio */
     .menu-top {
         display: none;
     }
 
+    /* Reduce más las fuentes para móviles */
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
     p { font-size: 1rem; }
