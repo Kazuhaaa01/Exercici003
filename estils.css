@@ -2,10 +2,7 @@
 *,
 *::before,
 *::after {
-    /* El "box-model" moderno. 
-       El padding y el borde se incluyen DENTRO del 'width' y 'height'.
-       Esto hace que los cálculos de tamaño sean mucho más fáciles. 
-    */
+    /* El padding y el borde se incluyen DENTRO del 'width' y 'height'.    */
     box-sizing: border-box; 
     /* Quitamos todos los márgenes y rellenos que ponen los navegadores por defecto. */
     margin: 0;
