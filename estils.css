@@ -86,15 +86,6 @@ img {
     padding-right: 20px;
 }
 
-/* --- HEADER Y MENÚ STICKY --- */
-
-/* Parte superior (barra negra) */
-.menu-top {
-    background-color: #1d1d1f; /* Fondo oscuro */
-    color: #f5f5f7;
-    padding: 8px 0;
-}
-
 /* Usamos Flexbox para centrar el contenido de la barra superior */
 .menu-top .autocenter {
     display: flex;
