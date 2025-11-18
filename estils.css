@@ -27,6 +27,9 @@ h1 {
     font-size: 3.5rem; /* Tamaño de fuente (relativo al 'root') */
     color: #000;
     margin-bottom: 1rem; /* Margen inferior */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h2 {
@@ -171,9 +174,9 @@ ul.menu-links li a:hover {
     font-weight: 600;
 }
 .buy-button a:hover {
-    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
-    color: #fff;
+    background-color: #fa4c72;
     text-decoration: none;
+    box-shadow: 0 4px 10px #ff4169;
 }
 
 /* --- SECCIÓN HERO (Principal) --- */
@@ -206,7 +209,7 @@ ul.menu-links li a:hover {
 }
 
 /* Estilo común para los dos botones */
-.btn-primary, .btn-secondary {
+.btn-primary{
     display: inline-block;
     padding: 12px 24px;
     font-size: 1rem;
@@ -219,13 +222,13 @@ ul.menu-links li a:hover {
 
 /* Botón principal (azul) */
 .btn-primary {
-    background-color: #007aff;
+    background-color: #ff4169;
     color: #fff;
 }
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #fa4c72;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3); /* Sombra azul */
+    box-shadow: 0 4px 10px #ff4169;
 }
 
 /* Botón secundario (gris) */
@@ -315,6 +318,7 @@ ul.menu-links li a:hover {
     margin: 40px auto 0 auto;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Grid de Tecnologías Apple (fondo negro) */

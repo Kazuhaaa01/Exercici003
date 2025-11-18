@@ -3,37 +3,31 @@
 <head>
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixelmator Pro 3.7 - Professional Image Editor for Mac</title>
+    <title>Pixelmator Pro</title>
     <link rel="stylesheet" href="estils.css">
+    <link rel="icon" type="image" href="imatges\ico_pixelamtor-pro-2.0@2x.png">
 </head>
 <body>
 
-        
     <!-- PARTE SUPERIOR DEL MENÚ: Esta sección desaparece cuando el usuario hace scroll hacia abajo -->
     <div class="menu-top">
         <!-- Contenedor autocenter: centra el contenido y limita su ancho máximo para que no se expanda demasiado en pantallas grandes -->
         <div class="autocenter">
             <div class="menu-top-content">
-                <!-- Logo de Pixelmator Pro: es un enlace que contiene una imagen -->
-                <a href="https://www.pixelmator.com/pro/" class="logo">
-                    <!-- Imagen del logo. El atributo alt proporciona texto alternativo para accesibilidad -->
-                    <img src="imatges/ico_pixelamtor-pro-2.0@2x.png" alt="Pixelmator Pro Logo">
-                </a>
-                <!-- Div para el anuncio de la nueva versión -->
-                <div class="announcement">
-                    <a href="https://www.pixelmator.com/pro/">Pixelmator Pro 3.7 — Now with Apple Intelligence</a>
+                
                 </div>
             </div>
         </div>
     </div>
 
-        <!-- PARTE INFERIOR DEL MENÚ: Esta sección permanece fija en la parte superior cuando haces scroll -->
+        <!-- PARTE INFERIOR DEL MENÚ: Esta sección permanece fija (sticky) en la parte superior cuando haces scroll -->
         <nav class="menu-sticky">
             <!-- Contenedor autocenter para centrar el menú de navegación -->
             <div class="autocenter">
-                <!-- Lista desordenada que contiene los enlaces del menú de navegación -->
+                <!-- Lista desordenada (ul) que contiene los enlaces del menú de navegación -->
                 <ul class="menu-links">
-                    <!-- Cada elemento de lista contiene un enlace a diferentes secciones del sitio web -->
+                    <!-- Cada elemento de lista (li) contiene un enlace (a) a diferentes secciones del sitio web -->
+                    <li><a src="imatges/ico_pixelamtor-pro-2.0@2x.png" alt="Pixelmator Pro Logo" href="https://www.pixelmator.com/pro/"></a></li>
                     <li><a href="https://www.pixelmator.com/pro/">Pixelmator Pro</a></li>
                     <li><a href="https://www.pixelmator.com/photomator/">Photomator</a></li>
                     <li><a href="https://www.pixelmator.com/blog/">Blog</a></li>
@@ -45,41 +39,37 @@
      </nav>
 
 
-    <!-- SECCIÓN HERO: IMAGEN Y TÍTULO PRINCIPAL -->
+    <!-- ========== SECCIÓN HERO: IMAGEN Y TÍTULO PRINCIPAL ========== -->
     <!-- La sección hero es la primera sección grande que ve el usuario, normalmente con el título principal y una imagen destacada -->
     <section class="hero">
         <div class="autocenter">
-            <!-- Título principal h1: el más importante de la página -->
-            <h1>Pixelmator Pro</h1>
-            
-            <!-- Párrafo con subtítulo, usa clase especial para aplicarle estilos diferentes -->
-            <p class="hero-subtitle">Professional image editing tools that anyone can use.</p>
+            <!-- Título principal de nivel 1 (h1): el más importante de la página (solo debe haber uno por página) -->
+            <h1>Professional image editing tools that anyone can use.</h1>
             
             <!-- Imagen principal del hero envuelta en un enlace -->
             <a href="https://www.pixelmator.com/pro/"><img src="imatges/img_hero@2x.png" alt="Pixelmator Pro Interface" class="hero-image"></a>
             
-            <!-- Contenedor para los botones de llamada a la acción -->
+            <p>Pixelmator Pro is an image editor designed to make the most powerful professional image editing tools accessible to everyone. And with an extensive collection of tools for editing and retouching photos, creating graphic designs, painting, drawing vector graphics, and adding stunning effects, it’s the only image editor you’ll need.</p>
+            <!-- Contenedor para los botones de llamada a la acción (CTA = Call To Action) -->
             <div class="cta-buttons">
-                <!-- Botón principal con estilo destacado -->
+                <!-- Botón principal (primario) con estilo destacado -->
                 <a href="https://apps.apple.com/us/app/pixelmator-pro/id1289583905?mt=12&ls=" class="btn-primary">Buy now</a>
-                <!-- Botón secundario con estilo menos destacado -->
-                <a href="https://www.pixelmator.com/pro/tech-specs/" class="btn-secondary">Tech Specs</a>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE CONTENIDO: AJUSTES DE COLOR -->
+    <!-- ========== SECCIÓN DE CONTENIDO: AJUSTES DE COLOR ========== -->
     <!-- Sección que explica las características de ajustes de color de la aplicación -->
     <section class="content-section">
         <div class="autocenter">
-            <!-- Título h2: subtítulo de la sección -->
+            <!-- Título de nivel 2 (h2): subtítulo de la sección -->
             <h2>Essential and advanced color adjustments</h2>
             
-            <!-- Párrafos que contienen el texto descriptivo de la sección -->
+            <!-- Párrafos (<p>) que contienen el texto descriptivo de la sección -->
             <p>In Pixelmator Pro, you'll find everything from essential color adjustments like brightness, contrast, and exposure to advanced tools like multi-channel curves and wheel-based color balance.</p>
             <p>Many of the most important adjustments can be applied automatically, using a machine learning algorithm trained on 20 million photos.</p>
             
-            <!-- Enlace con texto y flecha que indica que lleva a otra página -->
+            <!-- Enlace con texto y flecha (→) que indica que lleva a otra página -->
             <a href="https://support.pixelmator.com" class="link">See full list of adjustments →</a>
             
             <!-- Imagen ilustrativa de la función envuelta en un enlace -->
@@ -87,16 +77,16 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE CONTENIDO: RETOQUES -->
-    <!-- Sección con fondo gris para crear contraste visual -->
-    <section class="content-section gray-bg">
+    <!-- ========== SECCIÓN DE CONTENIDO: RETOQUES ========== -->
+    <!-- Sección con fondo gris (clase gray-bg) para crear contraste visual -->
+    <section class="apple-tech">
         <div class="autocenter">
-            <!-- Layout de dos columnas: divide el contenido en dos partes -->
+            <!-- Layout de dos columnas: divide el contenido en dos partes (texto e imagen) -->
             <div class="two-column-layout">
                 <!-- Primera columna: contiene el texto -->
                 <div class="column">
-                    <h2>Retouch with simple brushstrokes</h2>
-                    <p>Magically remove unwanted objects, clone parts of your photos, lighten or darken precise areas, and do much more. All by using simple brushstrokes to retouch just the areas you want. So all your shots look picture-perfect.</p>
+                    <h2>Draw and illustrate with a full collection of vector tools.</h2>
+                    <p>Pixelmator Pro comes with a full set of vector tools for creating resolution-independent designs. It includes easily-customizable smart shapes, a large collection of pre-designed shapes, and support for vector file formats including PSD, SVG, PDF, Adobe Illustrator, and Illustrator EPS.</p>
                 </div>
                 <!-- Segunda columna: contiene la imagen -->
                 <div class="column">
@@ -106,12 +96,12 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE CONTENIDO: SOPORTE RAW -->
-    <!-- Sección sin fondo gris -->
+    <!-- ========== SECCIÓN DE CONTENIDO: SOPORTE RAW ========== -->
+    <!-- Sección sin fondo gris (vuelve al fondo blanco/normal) -->
     <section class="content-section">
         <div class="autocenter">
-            <h2>Edit RAW photos from over 750 cameras</h2>
-            <p>Pixelmator Pro supports RAW photos from over 750 of the most popular digital cameras. What's more, you can add RAW photos as RAW layers and edit directly without having to convert or preprocess them.</p>
+            <h2>Effortless RAW editing.</h2>
+            <p>Pixelmator Pro is an image editor designed to make the most powerful professional image editing tools accessible to everyone. And with an extensive collection of tools for editing and retouching photos, creating graphic designs, painting, drawing vector graphics, and adding stunning effects, it’s the only image editor you’ll need.</p>
             
             <!-- Enlace a la lista de formatos RAW soportados -->
             <a href="https://support.pixelmator.com/faq-pixelmator-pro/resources/digital-camera-raw-formats-supported-in-pixelmator-pro" class="link">View supported RAW formats →</a>
@@ -120,16 +110,16 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE CONTENIDO: CAPAS DE AJUSTE DE COLOR -->
+    <!-- ========== SECCIÓN DE CONTENIDO: CAPAS DE AJUSTE DE COLOR ========== -->
     <section class="content-section">
         <div class="autocenter">
-            <!-- Layout de dos columnas con clase: invierte el orden -->
+            <!-- Layout de dos columnas con clase "reverse": invierte el orden (imagen primero, texto después) -->
             <div class="two-column-layout reverse">
-                <!-- Primera columna: imagen -->
+                <!-- Primera columna: imagen (aparecerá a la izquierda por el reverse) -->
                 <div class="column">
                     <a href="https://www.pixelmator.com/pro/"><img src="imatges/ico_color-layers@2x.png" alt="Color Adjustment Layers" class="content-image"></a>
                 </div>
-                <!-- Segunda columna: texto la derecha -->
+                <!-- Segunda columna: texto (aparecerá a la derecha) -->
                 <div class="column">
                     <h2>Color adjustment layers</h2>
                     <p>Use color adjustments layers to combine different color adjustments, selectively edit photos with incredible precision, and change the look entire layered compositions with ease.</p>
@@ -138,28 +128,28 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE CONTENIDO: PLANTILLAS DE DISEÑO -->
+    <!-- ========== SECCIÓN DE CONTENIDO: PLANTILLAS DE DISEÑO ========== -->
     <section class="content-section gray-bg">
         <div class="autocenter">
-            <h2>Stunning design templates and mockups</h2>
-            <p>Create eye‑catching designs with ease using stunning design templates and see them come to life in beautiful, fully‑customizable mockups.</p>
+            <h2>Everything you need to create beautiful designs.</h2>
+            <p>Whether you’re working on a design for a poster, a webpage, or a blockbuster app, you’ll make your ideas come to life in Pixelmator Pro. With smart spacing guides, advanced alignment tools, and blazing fast performance, you can harness the full power of layer-based editing.</p>
             <a href="https://www.pixelmator.com/pro/"><img src="imatges/img_design--v1@2x.png" alt="Design Templates" class="content-image"></a>
         </div>
     </section>
 
-    <!-- SECCIÓN DE CONTENIDO: HERRAMIENTAS DE SELECCIÓN -->
+    <!-- ========== SECCIÓN DE CONTENIDO: HERRAMIENTAS DE SELECCIÓN ========== -->
     <section class="content-section">
         <div class="autocenter">
             <h2>Powerful selection tools</h2>
             
-            <!-- Grid de características: organiza los elementos en formato de rejilla -->
+            <!-- Grid (cuadrícula) de características: organiza los elementos en formato de rejilla -->
             <div class="features-grid">
                 <!-- Cada feature-item es una tarjeta con imagen, título y descripción -->
                 
                 <!-- Primera tarjeta: Quick Selection -->
                 <div class="feature-item">
                     <a href="https://www.pixelmator.com/pro/"><img src="imatges/img_quick-selection-tool@2x.png" alt="Quick Selection Tool" class="feature-image"></a>
-                    <!-- Título h3: subtítulo dentro de una sección -->
+                    <!-- Título de nivel 3 (h3): subtítulo dentro de una sección -->
                     <h3>Quick Selection</h3>
                     <p>Thanks to its advanced algorithm, the Quick Selection tool lets you easily select even the most challenging objects and areas with just a few brushstrokes.</p>
                 </div>
@@ -181,19 +171,20 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE CONTENIDO: VÍDEO DEMOSTRATIVO -->
+    <!-- ========== SECCIÓN DE CONTENIDO: VÍDEO DEMOSTRATIVO ========== -->
     <section class="content-section">
         <div class="autocenter">
-            <h2>See Pixelmator Pro in action</h2>
+            <h2>Magically get rid of unwanted objects.</h2>
+            <p>Make small imperfections or even entire objects disappear from your images by painting over them with the Repair Tool. No matter how complex the background, the Repair Tool can make almost any object vanish without a trace.</p>
             
-            <!-- Etiqueta <video> reproduce un archivo de vídeo directamente en el navegador -->
-            <!-- El atributo "controls" muestra los controles de reproducción -->
-            <video src="imatges/video_repair.mp4" controls class="demo-video">
+            <!-- Etiqueta <video>: reproduce un archivo de vídeo directamente en el navegador -->
+            <!-- El atributo "controls" muestra los controles de reproducción (play, pause, volumen, etc.) -->
+            <video src="imatges/video_repair.mp4" autoplay muted loop playsinline class="demo-video">
             </video>
         </div>
     </section>
 
-    <!-- SECCIÓN DE CONTENIDO: TECNOLOGÍAS APPLE -->
+    <!-- ========== SECCIÓN DE CONTENIDO: TECNOLOGÍAS APPLE ========== -->
     <!-- Sección especial con clase adicional "apple-tech" para estilos específicos -->
     <section class="content-section apple-tech">
         <div class="autocenter">
@@ -236,7 +227,7 @@
         </div>
     </section>
 
-    <!-- FOOTER: PIE DE PÁGINA -->
+    <!-- ========== FOOTER: PIE DE PÁGINA ========== -->
     <!-- El footer contiene información final de la página: enlaces adicionales, copyright, etc. -->
     <footer>
         <div class="autocenter">
